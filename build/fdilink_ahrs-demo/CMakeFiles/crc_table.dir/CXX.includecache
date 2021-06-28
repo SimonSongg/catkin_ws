@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/adv/catkin_ws/src/fdilink_ahrs-demo/include/crc_table.h
+stdint.h
+-
+
+/home/adv/catkin_ws/src/fdilink_ahrs-demo/src/crc_table.cpp
+stdint.h
+-
+crc_table.h
+-
+

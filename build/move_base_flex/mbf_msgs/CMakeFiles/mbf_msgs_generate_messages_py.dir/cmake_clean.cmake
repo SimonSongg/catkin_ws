@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/mbf_msgs_generate_messages_py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/msg/_GetPathActionFeedback.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/msg/_MoveBaseResult.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/msg/_MoveBaseFeedback.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/msg/_ExePathResult.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/msg/_MoveBaseActionFeedback.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/msg/_RecoveryFeedback.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/msg/_RecoveryAction.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/msg/_GetPathFeedback.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/msg/_RecoveryGoal.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/msg/_GetPathGoal.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/msg/_ExePathActionGoal.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/msg/_MoveBaseActionGoal.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/msg/_GetPathAction.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/msg/_RecoveryResult.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/msg/_GetPathActionResult.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/msg/_RecoveryActionFeedback.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/msg/_ExePathActionFeedback.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/msg/_RecoveryActionGoal.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/msg/_GetPathResult.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/msg/_MoveBaseAction.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/msg/_ExePathFeedback.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/msg/_MoveBaseGoal.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/msg/_ExePathGoal.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/msg/_GetPathActionGoal.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/msg/_MoveBaseActionResult.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/msg/_ExePathAction.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/msg/_ExePathActionResult.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/msg/_RecoveryActionResult.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/srv/_CheckPoint.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/srv/_CheckPath.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/srv/_CheckPose.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/msg/__init__.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/mbf_msgs/srv/__init__.py"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang )
+  include(CMakeFiles/mbf_msgs_generate_messages_py.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

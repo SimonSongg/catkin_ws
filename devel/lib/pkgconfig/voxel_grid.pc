@@ -1,0 +1,8 @@
+prefix=/home/adv/catkin_ws/devel
+
+Name: voxel_grid
+Description: Description of voxel_grid
+Version: 1.16.4
+Cflags: -I/home/adv/catkin_ws/src/navigation-melodic/voxel_grid/include
+Libs: -L${prefix}/lib -lvoxel_grid
+Requires: roscpp

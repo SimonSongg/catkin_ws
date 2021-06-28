@@ -1,0 +1,8 @@
+prefix=/home/adv/catkin_ws/devel
+
+Name: wheeltec_multi
+Description: Description of wheeltec_multi
+Version: 0.0.0
+Cflags: -I/home/adv/catkin_ws/devel/include
+Libs: -L${prefix}/lib 
+Requires: roscpp

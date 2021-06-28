@@ -1,0 +1,8 @@
+prefix=/home/adv/catkin_ws/devel
+
+Name: gpspub
+Description: Description of gpspub
+Version: 0.0.0
+Cflags: -I/home/adv/catkin_ws/devel/include -I/home/adv/catkin_ws/src/gpspub/include
+Libs: -L${prefix}/lib -lgpspub
+Requires: roscpp rospy serial message_runtime

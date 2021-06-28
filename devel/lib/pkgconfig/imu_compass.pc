@@ -1,0 +1,8 @@
+prefix=/home/adv/catkin_ws/devel
+
+Name: imu_compass
+Description: Description of imu_compass
+Version: 0.0.5
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
