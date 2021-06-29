@@ -17,7 +17,7 @@ import sys, select, termios, tty
 # 以及最大转向角速度
 # 这两个值悠着点改，别改大了，会怎样我也不知道
 speedMax = 3 #移动速度 m/s
-turnMax  = 0.3   #转向速度 rad/s
+turnMax  = 1   #转向速度 rad/s
 
 # 下面这几个变量都是输入的Vector3的变量
 inputX = 0.0
@@ -73,7 +73,7 @@ if __name__=="__main__":
     rospy.init_node('chassis_control') #创建ROS节点
     rospy.Subscriber('ADV_chassis_move_control', Vector3, callback) #创建底盘控制话题订阅者，‘ADV_chassis_move_control’
     
-    pub = rospy.Publisher('cmd_vel', Twist, queue_size=5) #创建速度话题发布者
+    pub = rospy.Publisher('cmd_vel', Twist, queue_size=10) #创建速度话题发布者
 
     x      = 0   #前进后退方向
     th     = 0   #转向/横向移动方向

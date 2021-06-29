@@ -49,7 +49,7 @@ if __name__ == '__main__':
     
     rospy.init_node('cmd_vel_to_ackermann_drive')
         
-    twist_cmd_topic = rospy.get_param('~twist_cmd_topic', 'smoother_cmd_vel') 
+    twist_cmd_topic = rospy.get_param('~twist_cmd_topic', 'cmd_vel') 
     ackermann_cmd_topic = rospy.get_param('~ackermann_cmd_topic', '/ackermann_cmd')
     #wheelbase = rospy.get_param('~wheelbase', 0.323) #wheelspacing
     wheelbase = rospy.get_param('~wheelbase', 0.529) #wheelspacing
