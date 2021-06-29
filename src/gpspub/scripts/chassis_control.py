@@ -73,7 +73,7 @@ if __name__=="__main__":
     rospy.init_node('chassis_control') #创建ROS节点
     rospy.Subscriber('ADV_chassis_move_control', Vector3, callback) #创建底盘控制话题订阅者，‘ADV_chassis_move_control’
     
-    pub = rospy.Publisher('cmd_vel', Twist, queue_size=1) #创建速度话题发布者
+    pub = rospy.Publisher('cmd_vel', Twist, queue_size=5) #创建速度话题发布者
 
     x      = 0   #前进后退方向
     th     = 0   #转向/横向移动方向
@@ -100,7 +100,7 @@ if __name__=="__main__":
                 isOffline = True
 
             #判断是否紧急停车
-            if inputEmStop:
+            if inputEmStop or isOffline:
                 control_speed = 0
                 control_turn = 0
             else:
