@@ -40,7 +40,7 @@ data_array = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.
 CanDLLName = './ControlCAN.dll' #把DLL放到对应的目录下
 #canDLL = windll.LoadLibrary('./ControlCAN.dll')
 #Linux系统下使用下面语句，编译命令：python3 python3.8.0.py
-canDLL = cdll.LoadLibrary('./libcontrolcan.so')
+canDLL = cdll.LoadLibrary('/usr/bin/libcontrolcan.so')
 
 ret = canDLL.VCI_OpenDevice(VCI_USBCAN2, 0, 0)
 if ret == STATUS_OK:
@@ -72,12 +72,14 @@ while True:
     ret = canDLL.VCI_Receive(VCI_USBCAN2, 0, 0, byref(vci_can_obj), 1, 0)
     if ret > 0:
         index = list(vci_can_obj.Data)[1]
-        distance = float((256*list(vci_can_obj.Data)[2] + list(vci_can_obj.Data)[3])/100)
+        distance = (256.0*list(vci_can_obj.Data)[2] + list(vci_can_obj.Data)[3])/100.0
+        #print(distance)
         #print(list(vci_can_obj.Data))
         if (index == 31):
+            
             data_array[index] = distance        
             #print(index)
-            print(data_array)
+            #print(data_array)
             radar = copy.deepcopy(data_array)
             pub.publish(radar)
             

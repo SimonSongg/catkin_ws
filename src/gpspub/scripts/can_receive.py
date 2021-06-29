@@ -39,7 +39,7 @@ data_array = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.
 CanDLLName = './ControlCAN.dll' #把DLL放到对应的目录下
 #canDLL = windll.LoadLibrary('./ControlCAN.dll')
 #Linux系统下使用下面语句，编译命令：python3 python3.8.0.py
-canDLL = cdll.LoadLibrary('./libcontrolcan.so')
+canDLL = cdll.LoadLibrary('/usr/bin/libcontrolcan.so')
 
 ret = canDLL.VCI_OpenDevice(VCI_USBCAN2, 0, 0)
 if ret == STATUS_OK:
