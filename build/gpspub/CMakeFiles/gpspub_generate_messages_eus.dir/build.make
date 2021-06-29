@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/adv/catkin_ws/build
 include gpspub/CMakeFiles/gpspub_generate_messages_eus.dir/progress.make
 
 gpspub/CMakeFiles/gpspub_generate_messages_eus: /home/adv/catkin_ws/devel/share/roseus/ros/gpspub/msg/adv_gpsmsg.l
+gpspub/CMakeFiles/gpspub_generate_messages_eus: /home/adv/catkin_ws/devel/share/roseus/ros/gpspub/msg/radardata.l
 gpspub/CMakeFiles/gpspub_generate_messages_eus: /home/adv/catkin_ws/devel/share/roseus/ros/gpspub/manifest.l
 
 
@@ -62,12 +63,18 @@ gpspub/CMakeFiles/gpspub_generate_messages_eus: /home/adv/catkin_ws/devel/share/
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adv/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from gpspub/adv_gpsmsg.msg"
 	cd /home/adv/catkin_ws/build/gpspub && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/adv/catkin_ws/src/gpspub/msg/adv_gpsmsg.msg -Igpspub:/home/adv/catkin_ws/src/gpspub/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p gpspub -o /home/adv/catkin_ws/devel/share/roseus/ros/gpspub/msg
 
+/home/adv/catkin_ws/devel/share/roseus/ros/gpspub/msg/radardata.l: /opt/ros/melodic/lib/geneus/gen_eus.py
+/home/adv/catkin_ws/devel/share/roseus/ros/gpspub/msg/radardata.l: /home/adv/catkin_ws/src/gpspub/msg/radardata.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adv/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from gpspub/radardata.msg"
+	cd /home/adv/catkin_ws/build/gpspub && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/adv/catkin_ws/src/gpspub/msg/radardata.msg -Igpspub:/home/adv/catkin_ws/src/gpspub/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p gpspub -o /home/adv/catkin_ws/devel/share/roseus/ros/gpspub/msg
+
 /home/adv/catkin_ws/devel/share/roseus/ros/gpspub/manifest.l: /opt/ros/melodic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adv/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp manifest code for gpspub"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adv/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp manifest code for gpspub"
 	cd /home/adv/catkin_ws/build/gpspub && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/adv/catkin_ws/devel/share/roseus/ros/gpspub gpspub std_msgs
 
 gpspub_generate_messages_eus: gpspub/CMakeFiles/gpspub_generate_messages_eus
 gpspub_generate_messages_eus: /home/adv/catkin_ws/devel/share/roseus/ros/gpspub/msg/adv_gpsmsg.l
+gpspub_generate_messages_eus: /home/adv/catkin_ws/devel/share/roseus/ros/gpspub/msg/radardata.l
 gpspub_generate_messages_eus: /home/adv/catkin_ws/devel/share/roseus/ros/gpspub/manifest.l
 gpspub_generate_messages_eus: gpspub/CMakeFiles/gpspub_generate_messages_eus.dir/build.make
 

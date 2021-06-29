@@ -148,7 +148,7 @@ CATKIN_SKIP_TESTING:BOOL=OFF
 CATKIN_SYMLINK_INSTALL:BOOL=OFF
 
 //List of ';' separated packages to build
-CATKIN_WHITELIST_PACKAGES:STRING=fdilink_ahrs
+CATKIN_WHITELIST_PACKAGES:STRING=gpspub
 
 //Path to a file.
 CCOLAMD_INCLUDE_DIR:PATH=/usr/include/suitesparse

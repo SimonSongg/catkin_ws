@@ -131,7 +131,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/adv/catkin_ws/build/gtest/cmake_install.cmake")
-  include("/home/adv/catkin_ws/build/fdilink_ahrs-demo/cmake_install.cmake")
+  include("/home/adv/catkin_ws/build/gpspub/cmake_install.cmake")
 
 endif()
 

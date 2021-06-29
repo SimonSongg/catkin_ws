@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/adv/catkin_ws/build
 include gpspub/CMakeFiles/gpspub_generate_messages_cpp.dir/progress.make
 
 gpspub/CMakeFiles/gpspub_generate_messages_cpp: /home/adv/catkin_ws/devel/include/gpspub/adv_gpsmsg.h
+gpspub/CMakeFiles/gpspub_generate_messages_cpp: /home/adv/catkin_ws/devel/include/gpspub/radardata.h
 
 
 /home/adv/catkin_ws/devel/include/gpspub/adv_gpsmsg.h: /opt/ros/melodic/lib/gencpp/gen_cpp.py
@@ -62,8 +63,15 @@ gpspub/CMakeFiles/gpspub_generate_messages_cpp: /home/adv/catkin_ws/devel/includ
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adv/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from gpspub/adv_gpsmsg.msg"
 	cd /home/adv/catkin_ws/src/gpspub && /home/adv/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/adv/catkin_ws/src/gpspub/msg/adv_gpsmsg.msg -Igpspub:/home/adv/catkin_ws/src/gpspub/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p gpspub -o /home/adv/catkin_ws/devel/include/gpspub -e /opt/ros/melodic/share/gencpp/cmake/..
 
+/home/adv/catkin_ws/devel/include/gpspub/radardata.h: /opt/ros/melodic/lib/gencpp/gen_cpp.py
+/home/adv/catkin_ws/devel/include/gpspub/radardata.h: /home/adv/catkin_ws/src/gpspub/msg/radardata.msg
+/home/adv/catkin_ws/devel/include/gpspub/radardata.h: /opt/ros/melodic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adv/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from gpspub/radardata.msg"
+	cd /home/adv/catkin_ws/src/gpspub && /home/adv/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/adv/catkin_ws/src/gpspub/msg/radardata.msg -Igpspub:/home/adv/catkin_ws/src/gpspub/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p gpspub -o /home/adv/catkin_ws/devel/include/gpspub -e /opt/ros/melodic/share/gencpp/cmake/..
+
 gpspub_generate_messages_cpp: gpspub/CMakeFiles/gpspub_generate_messages_cpp
 gpspub_generate_messages_cpp: /home/adv/catkin_ws/devel/include/gpspub/adv_gpsmsg.h
+gpspub_generate_messages_cpp: /home/adv/catkin_ws/devel/include/gpspub/radardata.h
 gpspub_generate_messages_cpp: gpspub/CMakeFiles/gpspub_generate_messages_cpp.dir/build.make
 
 .PHONY : gpspub_generate_messages_cpp

@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/adv/catkin_ws/build
 include gpspub/CMakeFiles/gpspub_generate_messages_nodejs.dir/progress.make
 
 gpspub/CMakeFiles/gpspub_generate_messages_nodejs: /home/adv/catkin_ws/devel/share/gennodejs/ros/gpspub/msg/adv_gpsmsg.js
+gpspub/CMakeFiles/gpspub_generate_messages_nodejs: /home/adv/catkin_ws/devel/share/gennodejs/ros/gpspub/msg/radardata.js
 
 
 /home/adv/catkin_ws/devel/share/gennodejs/ros/gpspub/msg/adv_gpsmsg.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
@@ -61,8 +62,14 @@ gpspub/CMakeFiles/gpspub_generate_messages_nodejs: /home/adv/catkin_ws/devel/sha
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adv/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from gpspub/adv_gpsmsg.msg"
 	cd /home/adv/catkin_ws/build/gpspub && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adv/catkin_ws/src/gpspub/msg/adv_gpsmsg.msg -Igpspub:/home/adv/catkin_ws/src/gpspub/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p gpspub -o /home/adv/catkin_ws/devel/share/gennodejs/ros/gpspub/msg
 
+/home/adv/catkin_ws/devel/share/gennodejs/ros/gpspub/msg/radardata.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
+/home/adv/catkin_ws/devel/share/gennodejs/ros/gpspub/msg/radardata.js: /home/adv/catkin_ws/src/gpspub/msg/radardata.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adv/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from gpspub/radardata.msg"
+	cd /home/adv/catkin_ws/build/gpspub && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adv/catkin_ws/src/gpspub/msg/radardata.msg -Igpspub:/home/adv/catkin_ws/src/gpspub/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p gpspub -o /home/adv/catkin_ws/devel/share/gennodejs/ros/gpspub/msg
+
 gpspub_generate_messages_nodejs: gpspub/CMakeFiles/gpspub_generate_messages_nodejs
 gpspub_generate_messages_nodejs: /home/adv/catkin_ws/devel/share/gennodejs/ros/gpspub/msg/adv_gpsmsg.js
+gpspub_generate_messages_nodejs: /home/adv/catkin_ws/devel/share/gennodejs/ros/gpspub/msg/radardata.js
 gpspub_generate_messages_nodejs: gpspub/CMakeFiles/gpspub_generate_messages_nodejs.dir/build.make
 
 .PHONY : gpspub_generate_messages_nodejs

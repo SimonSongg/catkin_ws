@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/adv/catkin_ws/build
 include gpspub/CMakeFiles/gpspub_generate_messages_lisp.dir/progress.make
 
 gpspub/CMakeFiles/gpspub_generate_messages_lisp: /home/adv/catkin_ws/devel/share/common-lisp/ros/gpspub/msg/adv_gpsmsg.lisp
+gpspub/CMakeFiles/gpspub_generate_messages_lisp: /home/adv/catkin_ws/devel/share/common-lisp/ros/gpspub/msg/radardata.lisp
 
 
 /home/adv/catkin_ws/devel/share/common-lisp/ros/gpspub/msg/adv_gpsmsg.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
@@ -61,8 +62,14 @@ gpspub/CMakeFiles/gpspub_generate_messages_lisp: /home/adv/catkin_ws/devel/share
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adv/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from gpspub/adv_gpsmsg.msg"
 	cd /home/adv/catkin_ws/build/gpspub && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/adv/catkin_ws/src/gpspub/msg/adv_gpsmsg.msg -Igpspub:/home/adv/catkin_ws/src/gpspub/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p gpspub -o /home/adv/catkin_ws/devel/share/common-lisp/ros/gpspub/msg
 
+/home/adv/catkin_ws/devel/share/common-lisp/ros/gpspub/msg/radardata.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
+/home/adv/catkin_ws/devel/share/common-lisp/ros/gpspub/msg/radardata.lisp: /home/adv/catkin_ws/src/gpspub/msg/radardata.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adv/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from gpspub/radardata.msg"
+	cd /home/adv/catkin_ws/build/gpspub && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/adv/catkin_ws/src/gpspub/msg/radardata.msg -Igpspub:/home/adv/catkin_ws/src/gpspub/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p gpspub -o /home/adv/catkin_ws/devel/share/common-lisp/ros/gpspub/msg
+
 gpspub_generate_messages_lisp: gpspub/CMakeFiles/gpspub_generate_messages_lisp
 gpspub_generate_messages_lisp: /home/adv/catkin_ws/devel/share/common-lisp/ros/gpspub/msg/adv_gpsmsg.lisp
+gpspub_generate_messages_lisp: /home/adv/catkin_ws/devel/share/common-lisp/ros/gpspub/msg/radardata.lisp
 gpspub_generate_messages_lisp: gpspub/CMakeFiles/gpspub_generate_messages_lisp.dir/build.make
 
 .PHONY : gpspub_generate_messages_lisp

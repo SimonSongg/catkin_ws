@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/gpspub_generate_messages_py"
   "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/gpspub/msg/_adv_gpsmsg.py"
+  "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/gpspub/msg/_radardata.py"
   "/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/gpspub/msg/__init__.py"
 )
 

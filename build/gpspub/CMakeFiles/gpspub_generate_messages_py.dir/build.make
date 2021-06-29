@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/adv/catkin_ws/build
 include gpspub/CMakeFiles/gpspub_generate_messages_py.dir/progress.make
 
 gpspub/CMakeFiles/gpspub_generate_messages_py: /home/adv/catkin_ws/devel/lib/python2.7/dist-packages/gpspub/msg/_adv_gpsmsg.py
+gpspub/CMakeFiles/gpspub_generate_messages_py: /home/adv/catkin_ws/devel/lib/python2.7/dist-packages/gpspub/msg/_radardata.py
 gpspub/CMakeFiles/gpspub_generate_messages_py: /home/adv/catkin_ws/devel/lib/python2.7/dist-packages/gpspub/msg/__init__.py
 
 
@@ -62,13 +63,20 @@ gpspub/CMakeFiles/gpspub_generate_messages_py: /home/adv/catkin_ws/devel/lib/pyt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adv/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG gpspub/adv_gpsmsg"
 	cd /home/adv/catkin_ws/build/gpspub && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/adv/catkin_ws/src/gpspub/msg/adv_gpsmsg.msg -Igpspub:/home/adv/catkin_ws/src/gpspub/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p gpspub -o /home/adv/catkin_ws/devel/lib/python2.7/dist-packages/gpspub/msg
 
+/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/gpspub/msg/_radardata.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
+/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/gpspub/msg/_radardata.py: /home/adv/catkin_ws/src/gpspub/msg/radardata.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adv/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG gpspub/radardata"
+	cd /home/adv/catkin_ws/build/gpspub && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/adv/catkin_ws/src/gpspub/msg/radardata.msg -Igpspub:/home/adv/catkin_ws/src/gpspub/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p gpspub -o /home/adv/catkin_ws/devel/lib/python2.7/dist-packages/gpspub/msg
+
 /home/adv/catkin_ws/devel/lib/python2.7/dist-packages/gpspub/msg/__init__.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/adv/catkin_ws/devel/lib/python2.7/dist-packages/gpspub/msg/__init__.py: /home/adv/catkin_ws/devel/lib/python2.7/dist-packages/gpspub/msg/_adv_gpsmsg.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adv/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python msg __init__.py for gpspub"
+/home/adv/catkin_ws/devel/lib/python2.7/dist-packages/gpspub/msg/__init__.py: /home/adv/catkin_ws/devel/lib/python2.7/dist-packages/gpspub/msg/_radardata.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adv/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python msg __init__.py for gpspub"
 	cd /home/adv/catkin_ws/build/gpspub && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/adv/catkin_ws/devel/lib/python2.7/dist-packages/gpspub/msg --initpy
 
 gpspub_generate_messages_py: gpspub/CMakeFiles/gpspub_generate_messages_py
 gpspub_generate_messages_py: /home/adv/catkin_ws/devel/lib/python2.7/dist-packages/gpspub/msg/_adv_gpsmsg.py
+gpspub_generate_messages_py: /home/adv/catkin_ws/devel/lib/python2.7/dist-packages/gpspub/msg/_radardata.py
 gpspub_generate_messages_py: /home/adv/catkin_ws/devel/lib/python2.7/dist-packages/gpspub/msg/__init__.py
 gpspub_generate_messages_py: gpspub/CMakeFiles/gpspub_generate_messages_py.dir/build.make
 

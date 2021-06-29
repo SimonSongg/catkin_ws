@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/gpspub_generate_messages_cpp"
   "/home/adv/catkin_ws/devel/include/gpspub/adv_gpsmsg.h"
+  "/home/adv/catkin_ws/devel/include/gpspub/radardata.h"
 )
 
 # Per-language clean rules from dependency scanning.

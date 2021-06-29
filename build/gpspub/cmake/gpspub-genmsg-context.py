@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/adv/catkin_ws/src/gpspub/msg/adv_gpsmsg.msg"
+messages_str = "/home/adv/catkin_ws/src/gpspub/msg/adv_gpsmsg.msg;/home/adv/catkin_ws/src/gpspub/msg/radardata.msg"
 services_str = ""
 pkg_name = "gpspub"
 dependencies_str = "std_msgs"

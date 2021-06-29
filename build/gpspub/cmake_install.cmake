@@ -38,7 +38,10 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gpspub/msg" TYPE FILE FILES "/home/adv/catkin_ws/src/gpspub/msg/adv_gpsmsg.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gpspub/msg" TYPE FILE FILES
+    "/home/adv/catkin_ws/src/gpspub/msg/adv_gpsmsg.msg"
+    "/home/adv/catkin_ws/src/gpspub/msg/radardata.msg"
+    )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

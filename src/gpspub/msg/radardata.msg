@@ -1,1 +1,1 @@
-float32[32] RadarData
+float64[32] RadarData
