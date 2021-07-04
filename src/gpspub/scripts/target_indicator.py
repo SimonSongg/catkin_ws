@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # coding=utf-8
 
-from typing import ContextManager, Counter
 import rospy
 import math
 from sensor_msgs.msg import NavSatFix
