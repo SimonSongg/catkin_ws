@@ -1,12 +1,6 @@
 #!/usr/bin/env python
 # coding=utf-8
 
-# 本代码会订阅一个叫ADV_chassis_move_control的节点，这个节点的类型是Vector3，其中
-# x控制前后，前正后负；y控制左右；左正右负；z等于0的时候底盘可以被前面两个值正常控制
-# 如果z不等于0，这会被视为急停，底盘将立刻停下。
-# 输入的x和y必须在0-100之间，否则会出现异常，程序终止
-# 底盘最大移动速度可调，底盘最大转向角速度可调
-
 import rospy
 
 from geometry_msgs.msg import Vector3, Pose2D
