@@ -11,7 +11,7 @@ routeArray = [[29.801971 , 121.561637] , [0.0 , 0.0]]# need further determinatio
 pub = rospy.Publisher('GPS_target', NavSatFix, queue_size=5) #publish the target GPS coordinates
 
 #target position arrival indicator
-isReachedDestination = False
+#isReachedDestination = False
 
 # subscribe
 latitude = 0.0  # 纬度[单位：度] 正值->北 负值->南（猜想是越往北值越大）
