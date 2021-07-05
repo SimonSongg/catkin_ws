@@ -26,7 +26,7 @@ DESTINATION_RANGE = 200 #终点符合范围：厘米
 RADAR_MAX_INDEX = 31
 RADAR_MID_TURN_SPEED = 95.0
 RADAR_SIDE_TURN_SPEED = 30.0
-RADAR_EM_DISTANCE = 5.0
+RADAR_EM_DISTANCE = 1.5
 RADAR_MAX_DISTANCE = 10.0
 
 # 订阅的值
@@ -83,6 +83,7 @@ def callbackYaw(data):
 def callbackTargetGPS(data):
     global targetLatitude
     global targetLongitude
+    global isTargetReached
     targetLatitude = data.latitude
     targetLongitude = data.longitude
     if targetLatitude == 0 and targetLongitude == 0:
@@ -168,8 +169,8 @@ def controlPID(event):
         radarFactor, radarTurn, isEmStop = controlRadar()
 
         # 输出
-        outputX = FORWARD_SPEED_MAX_PERCENT * (100 - radarFactor) / 100
-        outputY = (constrain(outputTurnByGPS, -99, 99) * (100 - radarFactor) + radarTurn * radarFactor) / 100
+        outputX = FORWARD_SPEED_MAX_PERCENT * (1 - radarFactor)
+        outputY = (constrain(outputTurnByGPS, -99, 99) * (1 - radarFactor) + radarTurn * radarFactor)
         vector3 = Vector3()
         vector3.x = outputX
         vector3.y = outputY
