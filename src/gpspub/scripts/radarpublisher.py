@@ -77,13 +77,16 @@ while True:
         #print(list(vci_can_obj.Data))
         if (index == 31):
             
-            data_array[index] = distance        
+            data_array[index-16] = distance        
             #print(index)
             #print(data_array)
-            radar = copy.deepcopy(data_array)
+            #radar = copy.deepcopy(data_array)
+            radar = data_array #try if it works
             pub.publish(radar)
             
             data_array = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
         else:
-            data_array[index] = distance
-            #sprint(index)
+            if (index >= 0 and index <= 15):
+                data_array[index+16] = distance
+            else:
+                data_array[index-16] = distance
