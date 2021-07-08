@@ -16,6 +16,10 @@ pipeline_wrapper = rs.pipeline_wrapper(pipeline)
 pipeline_profile = config.resolve(pipeline_wrapper)
 device = pipeline_profile.get_device()
 device_product_line = str(device.get_info(rs.camera_info.product_line))
+depth_sensor = device.query_sensors()[0]
+laser_pwr = depth_sensor.get_option(rs.option.laser_power)
+print(laser_pwr)
+depth_sensor.set_option(rs.option.laser_power, 360)
 
 found_rgb = False
 for s in device.sensors:
@@ -29,11 +33,11 @@ if not found_rgb:
 config.enable_stream(rs.stream.depth, 1280, 720, rs.format.z16, 30)
 config.enable_stream(rs.stream.color, 1280, 720, rs.format.bgr8, 30)
 
-for filename in os.listdir('z16'):
+for filename in os.listdir('D:\\catkin_ws\\vision_dataset_tool\\z16'):
     currentIndex = int(os.path.splitext(filename)[0])
     if currentIndex > index:
         index = currentIndex
-for filename in os.listdir('rgb8'):
+for filename in os.listdir('D:\\catkin_ws\\vision_dataset_tool\\rgb8'):
     currentIndex = int(os.path.splitext(filename)[0])
     if currentIndex > index:
         index = currentIndex
@@ -63,10 +67,11 @@ try:
         cv2.imshow('RealSense2', color_image)
 
         key = cv2.waitKey(1)
-        print(key)
+        #print(key)
+        print (depth_sensor.get_option(rs.option.laser_power))
         if key == 115:  # s
-            cv2.imwrite('z16\%d.png' % index, depth_image, [cv2.IMWRITE_PNG_COMPRESSION, 0])
-            cv2.imwrite('rgb8\%d.png' % index, color_image, [cv2.IMWRITE_PNG_COMPRESSION, 0])
+            cv2.imwrite('D:\\catkin_ws\\vision_dataset_tool\\z16\\%d.png' % index, depth_image, [cv2.IMWRITE_PNG_COMPRESSION, 0])
+            cv2.imwrite('D:\\catkin_ws\\vision_dataset_tool\\rgb8\\%d.png' % index, color_image, [cv2.IMWRITE_PNG_COMPRESSION, 0])
             index += 1
         elif key == 107:    # k
             break
