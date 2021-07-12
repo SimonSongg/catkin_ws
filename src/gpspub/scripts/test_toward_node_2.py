@@ -5,7 +5,7 @@ import rospy
 
 from geometry_msgs.msg import Vector3, Pose2D
 from sensor_msgs.msg import NavSatFix
-from radardata.msg import radardata
+from gpspub.msg import radardata
 
 import sys, select, termios, tty, math
 
@@ -180,9 +180,18 @@ def controlPID(event):
             vector3.z = 0.0
         pub.publish(vector3)
 
-        rospy.loginfo("x:%s\tcalculated y:%s\ttrue y:%s" % (vector3.x, outputTurnByGPS, vector3.y)) #打印一些数据
-        rospy.loginfo("latitude:%s\tlongitude:%s\ntargetLa:%s\ttargetLo:%s\nrealYaw:%s\ttarYaw:%s\terYaw:%s\n------------" % (latitude, longitude, targetLatitude, targetLongitude, realYaw, targetYaw, errorYaw))
-        
+        rospy.loginfo("                             \
+            x:%f\ttrue y:%f\n      \
+            latitude:%f\tlongitude:%f\n             \
+            targetLa:%f\ttargetLo:%f\n              \
+            realYaw:%f\ttarYaw:%f\terYaw:%f\n       \
+            ------------" % \
+            (vector3.x, vector3.y,
+            latitude, longitude,
+            targetLatitude, targetLongitude,
+            realYaw, targetYaw, errorYaw
+            )) #打印一些数据
+
         # 检测是否到达
         distance = math.sqrt(math.pow(abs(targetLatitude - latitude) * LATITUDE_TO_DISTANCE_FACTOR, 2) + math.pow(abs(targetLongitude - longitude) * LONGITUDE_TO_DISTANCE_FACTOR, 2))
         if distance < DESTINATION_RANGE or isTargetReached:
@@ -202,6 +211,7 @@ if __name__=="__main__":
     #rospy.Subscriber('imu/rpy/filtered', Vector3Stamped, callback2)    #被遗弃，这是旧的使用Zed2的代码
     rospy.Subscriber('mag_pose_2d', Pose2D, callbackYaw)                #订阅包含磁方向的Yaw角数据
     rospy.Subscriber('TargetGPS', NavSatFix, callbackTargetGPS)         #订阅目标GPS坐标数据
+    rospy.Subscriber('RadarDistance', radardata, callbackRadar)
 
     rospy.Timer(rospy.Duration(0.1), controlPID, False)
 
