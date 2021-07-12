@@ -2,8 +2,11 @@
 
 import rospy
 import serial
+import os
 from gpspub.msg import adv_gpsmsg
 from sensor_msgs.msg import NavSatFix
+
+os.system('echo %s | sudo -S %s' % ('ADV', 'chmod 777 /dev/ttyTHS0'))
 pub = rospy.Publisher('ADVGPSData', adv_gpsmsg, queue_size = 5)
 pub_nav = rospy.Publisher('GPSData', NavSatFix, queue_size = 5)
 rospy.init_node('ADVGPSPublisher', anonymous = False)
