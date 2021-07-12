@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+# coding=utf-8
 #import rospy
 #from gpspub.msg import radardata
 from ctypes import *
@@ -70,7 +70,7 @@ while True:
     ret = canDLL.VCI_Receive(VCI_USBCAN2, 0, 0, byref(vci_can_obj), 1, 0)
     if ret > 0:
         index = list(vci_can_obj.Data)[1]
-        distance = float((256*list(vci_can_obj.Data)[2] + list(vci_can_obj.Data)[3])/100)
+        distance = float((256.0*list(vci_can_obj.Data)[2] + list(vci_can_obj.Data)[3])/100.0)
         #print(list(vci_can_obj.Data))
         if (index == 31):
             data_array[index] = distance        

@@ -5,7 +5,7 @@ import rospy
 
 from geometry_msgs.msg import Vector3, Pose2D
 from sensor_msgs.msg import NavSatFix
-from radardata.msg import radardata
+from gpspub.msg import radardata
 
 import sys, select, termios, tty, math
 
@@ -30,13 +30,13 @@ RADAR_EM_DISTANCE = 1.5
 RADAR_MAX_DISTANCE = 10.0
 
 # 订阅的值
-latitude = 0.0  # 纬度[单位：度] 正值->北 负值->南（猜想是越往北值越大）
-longitude = 0.0 # 经度[单位：度] 正值->东 负值->西（猜想是越往东值越大）
+latitude = 1.0  # 纬度[单位：度] 正值->北 负值->南（猜想是越往北值越大）
+longitude = 1.0 # 经度[单位：度] 正值->东 负值->西（猜想是越往东值越大）
 targetLatitude = 0.0    # 纬度[单位：度] 正值->北 负值->南
 targetLongitude = 0.0  # 经度[单位：度] 正值->东 负值->西
 isTargetReached = True  # 是否到达目的地坐标
 yaw = 0.0       # Yaw角[单位：弧度] 逆时针->增加 顺时针->减少
-radarValues = [0.0] # 雷达的值
+radarValues = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0] # 雷达的值
 
 # 内部处理的值
 realYaw = 0.0
@@ -67,10 +67,11 @@ def callbackGPS(data):
     global longitude
     latitude = data.latitude
     longitude = data.longitude
+    print("now:%f,%f" % (latitude, longitude))
 
 def callbackRadar(data):
     global radarValues
-    radarValues = data
+    radarValues = data.RadarData
 
 def callbackYaw(data):
     global yaw
@@ -106,6 +107,7 @@ def controlRadar():
     angle = 0.0
     effNum = 0
 
+    print(radarValues)
     for index in range(len(radarValues)):
         if radarValues[index] < RADAR_EM_DISTANCE:
             return 0, 0, True
@@ -125,6 +127,8 @@ def controlRadar():
             turn = (0 - angle) / (RADAR_MAX_INDEX / 2.0) * (RADAR_MID_TURN_SPEED - RADAR_SIDE_TURN_SPEED) - RADAR_SIDE_TURN_SPEED
 
         return factor, turn, False
+    else:
+        return 0, 0, False
 
 def controlPID(event):
     # 参数
@@ -184,15 +188,18 @@ def controlPID(event):
         rospy.loginfo("latitude:%s\tlongitude:%s\ntargetLa:%s\ttargetLo:%s\nrealYaw:%s\ttarYaw:%s\terYaw:%s\n------------" % (latitude, longitude, targetLatitude, targetLongitude, realYaw, targetYaw, errorYaw))
         
         # 检测是否到达
+        print("target:%f,%f" % (targetLatitude, targetLongitude))
+        print("now:%f,%f" % (latitude, longitude))
         distance = math.sqrt(math.pow(abs(targetLatitude - latitude) * LATITUDE_TO_DISTANCE_FACTOR, 2) + math.pow(abs(targetLongitude - longitude) * LONGITUDE_TO_DISTANCE_FACTOR, 2))
         if distance < DESTINATION_RANGE or isTargetReached:
-            isReachedDestination = True
+            # isReachedDestination = True
             vector3.x = 0.0;  vector3.y = 0.0; vector3.z = 0.0
             pub.publish(vector3)
     else:
         vector3 = Vector3()
         vector3.x = 0.0;  vector3.y = 0.0; vector3.z = 0.0
         pub.publish(vector3)
+        print(123123)
 
 #主函数
 if __name__=="__main__":
@@ -201,7 +208,8 @@ if __name__=="__main__":
     rospy.Subscriber('GPSData', NavSatFix, callbackGPS)                 #订阅GPS数据
     #rospy.Subscriber('imu/rpy/filtered', Vector3Stamped, callback2)    #被遗弃，这是旧的使用Zed2的代码
     rospy.Subscriber('mag_pose_2d', Pose2D, callbackYaw)                #订阅包含磁方向的Yaw角数据
-    rospy.Subscriber('TargetGPS', NavSatFix, callbackTargetGPS)         #订阅目标GPS坐标数据
+    rospy.Subscriber('GPS_target', NavSatFix, callbackTargetGPS)         #订阅目标GPS坐标数据
+    rospy.Subscriber('RadarDistance', radardata, callbackRadar)
 
     rospy.Timer(rospy.Duration(0.1), controlPID, False)
 

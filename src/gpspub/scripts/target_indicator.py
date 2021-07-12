@@ -6,7 +6,7 @@ import math
 from sensor_msgs.msg import NavSatFix
 
 # route
-routeArray = [[29.801971 , 121.561637] , [0.0 , 0.0]]# need further determination
+routeArray = [[29.799992 , 121.558327] , [29.799970 , 121.558392]]# need further determination
 # publish
 pub = rospy.Publisher('GPS_target', NavSatFix, queue_size=5) #publish the target GPS coordinates
 
@@ -32,7 +32,7 @@ def callbackGPS(data):
     latitude = data.latitude
     longitude = data.longitude
 
-def pubcontrol():
+def pubcontrol(event):
     # 参数
     #global TARGET_LATITUDE
     #global TARGET_LONGITUDE
