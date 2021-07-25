@@ -41,18 +41,30 @@ while not rospy.is_shutdown():
             state = 1
         elif state == 1:
             state = 10
+        elif state == 2:
+            data_16_1 = dataF
+            state = 3
         elif state == 10:
             data_list[0] = 0.0
         elif state == 3:
             state = 20
+        elif state == 4:
+            data_16_2 = dataF
+            state = 5
         elif state == 20:
             data_list[1] = 0.0
         elif state == 5:
             state = 30
+        elif state == 6:
+            data_16_3 = dataF
+            state = 7
         elif state == 30:
             data_list[2] == 0.0
         elif state == 7:
             state = 40
+        elif state == 8:
+            data_16_4 = dataF
+            state = 9
         elif state == 40:
             data_list[3] = 0.0
     else:
