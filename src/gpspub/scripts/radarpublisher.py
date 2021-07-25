@@ -90,7 +90,7 @@ while not rospy.is_shutdown():
             
             data_array = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
         else:
-            data_array1[index] = distance
+            #data_array[index] = distance
             if (index >= 0 and index <= 15):
                 data_array[index+16] = distance
             else:
