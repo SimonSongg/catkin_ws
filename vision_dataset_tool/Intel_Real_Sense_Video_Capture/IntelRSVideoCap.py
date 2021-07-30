@@ -1,11 +1,22 @@
 
 import pyrealsense2 as rs
 import numpy as np
+import time
 import cv2
 import os
 
 # Start index
 index = 0
+
+# time
+lastFrameTime = 0
+currentTime = time.time()
+
+# framerate
+frameRate = 24
+
+# recording check
+isRecording = False
 
 # Configure depth and color streams
 pipeline = rs.pipeline()
@@ -49,6 +60,9 @@ pipeline.start(config)
 
 try:
     while True:
+        # time update
+        currentTime = time.time()
+
         # Wait for a coherent pair of frames: depth and color
         frames = pipeline.wait_for_frames()
         depth_frame = frames.get_depth_frame()
@@ -66,15 +80,21 @@ try:
         cv2.imshow('RealSense1', depth_image)
         cv2.imshow('RealSense2', color_image)
 
+        # check key
         key = cv2.waitKey(1)
-        #print(key)
+        if key == 115: # s
+            isRecording = not isRecording
+        elif key == 107:    # k
+            break
+
         print (depth_sensor.get_option(rs.option.laser_power))
-        if key == 115:  # s
+
+        if isRecording and currentTime - lastFrameTime >= 1.0 / frameRate:
+            print("Recording!")
             cv2.imwrite('D:\\catkin_ws\\vision_dataset_tool\\z16\\%d.png' % index, depth_image, [cv2.IMWRITE_PNG_COMPRESSION, 0])
             cv2.imwrite('D:\\catkin_ws\\vision_dataset_tool\\rgb8\\%d.png' % index, color_image, [cv2.IMWRITE_PNG_COMPRESSION, 0])
             index += 1
-        elif key == 107:    # k
-            break
+            lastFrameTime = currentTime
 
     pipeline.stop()
 
